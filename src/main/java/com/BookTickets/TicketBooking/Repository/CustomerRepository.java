@@ -1,12 +1,12 @@
-package com.BookTickets.TicketBooking.Domain.Repository;
+package com.BookTickets.TicketBooking.Repository;
 
-
-import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import com.BookTickets.TicketBooking.Domain.Customer;
 
+@Repository
 public interface CustomerRepository extends MongoRepository<Customer, String>{
 	
 	public Customer findById(String id);
