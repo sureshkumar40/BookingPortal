@@ -1,4 +1,4 @@
-package com.BookTickets.TicketBooking.Controller;
+/*package com.BookTickets.TicketBooking.Controller;
 
 import java.util.List;
 
@@ -47,13 +47,14 @@ public class MovieController {
 	}
 	
 	
-	@Path("/GetMovieByID/{id}")
+	@Path("/GetMovieByID")
 	@GET
 	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
-	public List<Customer> getMovieByID(@PathParam("id") final String id)
+	public List<Customer> getMovieByID()
 	{
 		
 		return CustomerRepository.findAll();
 	}
 
 }
+*/

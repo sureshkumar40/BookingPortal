@@ -10,6 +10,6 @@ import com.BookTickets.TicketBooking.Domain.Customer;
 public interface CustomerRepository extends MongoRepository<Customer, String>{
 	
 	public Customer findById(String id);
-	public Customer findByFirstName(String firstName);
+	public Customer findByemailId(String emailId);
 
 }
