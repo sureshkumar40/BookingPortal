@@ -53,7 +53,7 @@ public class MovieController {
 		
 	}
 	
-	@Path("/allMovies")
+	@Path("/allMovies/")
 	@GET
 	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public Iterable<Movie> getMovies()
@@ -70,7 +70,7 @@ public class MovieController {
 		return movieService.getmoviebyname(movieName);
 	}
 	
-	@Path("/update")
+	@Path("/update/")
 	@PUT
 	@Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public Movie updatemovie(Movie movie)
@@ -80,7 +80,7 @@ public class MovieController {
 	}
 	
 	@DELETE
-	@Path("/del/{MovieName}")
+	@Path("/del/{MovieName}/")
 	public String deleuser(@PathParam("MovieName") String moviename)
 	{
 		return movieService.delemovie(moviename);

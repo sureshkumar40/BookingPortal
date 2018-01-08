@@ -53,6 +53,7 @@ public class MovieServiceImpl implements MovieService {
 	@Override
 	public String delemovie(String MovieName) {
 		Movie movie=movieRepository.findByMovieName(MovieName);
+		System.out.println(movie);
 			movieRepository.delete(movie);
 		return "Movie has been deleted";
 	}

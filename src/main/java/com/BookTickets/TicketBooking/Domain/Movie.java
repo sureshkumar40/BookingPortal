@@ -7,21 +7,31 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 //@JsonIgnoreProperties(ignoreUnknown=true)
+
+@com.fasterxml.jackson.annotation.JsonIgnoreProperties
 @Document(collection = "Movie")
 public class Movie {
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	@Id
 	private String id;
 	
-	
 	@Indexed(unique = true)
-	private String MovieName;
+	private String movieName;
 
-	private int Rating;
+	private int rating;
 
-	private String Description; 
+	private String description; 
 
 	 private List<Review> reviews;
 
@@ -40,36 +50,29 @@ public class Movie {
 		this.crew = crew;
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getMovieName() {
-		return MovieName;
+		return movieName;
 	}
 
 	public void setMovieName(String movieName) {
-		MovieName = movieName;
+		this.movieName = movieName;
 	}
 
 	public int getRating() {
-		return Rating;
+		return rating;
 	}
 
 	public void setRating(int rating) {
-		Rating = rating;
+		this.rating = rating;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
 	public List<Review> getReviews() {
@@ -82,7 +85,7 @@ public class Movie {
 
 	@Override
 	public String toString() {
-		return "Movie [id=" + id + ", MovieName=" + MovieName+ ", Description=" + Description + "]";
+		return "Movie ["+"MovieName=" + movieName+ ", Description=" + description + "]";
 	}
 
 }

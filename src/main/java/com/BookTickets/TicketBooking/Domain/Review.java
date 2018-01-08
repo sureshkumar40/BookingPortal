@@ -11,7 +11,7 @@ public class Review {
 	String id;
 	String username;
 	
-	String ReviewComments;
+	String reviewComments;
 
 	public String getId() {
 		return id;
@@ -30,11 +30,11 @@ public class Review {
 	}
 
 	public String getReviewComments() {
-		return ReviewComments;
+		return reviewComments;
 	}
 
 	public void setReviewComments(String reviewComments) {
-		ReviewComments = reviewComments;
+		this.reviewComments = reviewComments;
 	}
 
 }
