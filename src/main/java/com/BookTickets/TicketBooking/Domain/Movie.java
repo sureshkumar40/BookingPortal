@@ -4,15 +4,20 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Customer")
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+//@JsonIgnoreProperties(ignoreUnknown=true)
+@Document(collection = "Movie")
 public class Movie {
 	@Id
 	private String id;
-
-	private String MovieName;
 	
+	
+	@Indexed(unique = true)
+	private String MovieName;
 
 	private int Rating;
 
@@ -21,6 +26,11 @@ public class Movie {
 	 private List<Review> reviews;
 
 	private HashMap<String,String> crew;
+	
+	public Movie()
+	{
+		super();
+	}
 
 	public HashMap<String, String> getCrew() {
 		return crew;
@@ -70,6 +80,9 @@ public class Movie {
 		this.reviews = reviews;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Movie [id=" + id + ", MovieName=" + MovieName+ ", Description=" + Description + "]";
+	}
 
 }

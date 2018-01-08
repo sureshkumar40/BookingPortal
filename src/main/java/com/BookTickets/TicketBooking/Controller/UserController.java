@@ -44,7 +44,7 @@ CustomerServiceImpl CustomerService;
 	}
 	
 	
-	@Path("/allUsers")
+	@Path("/allUsers/")
 	@GET
 	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public Iterable<Customer> getUsers()
@@ -54,6 +54,7 @@ CustomerServiceImpl CustomerService;
 	
 	@Path("/{emailId}")
 	@GET
+	@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 	public Customer getuserbyemailid(@PathParam("emailId") final String emailId)
 	
 	{
